@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { Card } from "react-native-elements";
+import * as Animatable from 'react-native-animatable';
+
 
 export default class ContactComponent extends Component {
   static navigationOptions = {
