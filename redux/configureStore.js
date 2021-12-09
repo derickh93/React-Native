@@ -13,6 +13,7 @@ const config = {
   key: "root",
   storage,
   debug: true,
+  timeout: null,
 };
 
 export const ConfigureStore = () => {
