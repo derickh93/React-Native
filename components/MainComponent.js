@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Home from "./HomeComponent";
-<<<<<<< HEAD
-=======
 import Directory from "./DirectoryComponent";
 import CampsiteInfo from "./CampsiteInfoComponent";
 import Constants from "expo-constants";
@@ -9,7 +7,6 @@ import AboutComponent from "./AboutComponent";
 import ContactComponent from "./ContactComponent";
 import Favorites from "./FavoritesComponent";
 import Login from "./LoginComponent";
->>>>>>> temp-branch
 import {
   View,
   Platform,
@@ -20,13 +17,6 @@ import {
   Alert,
   ToastAndroid,
 } from "react-native";
-import Directory from "./DirectoryComponent";
-import CampsiteInfo from "./CampsiteInfoComponent";
-import Constants from "expo-constants";
-import AboutComponent from "./AboutComponent";
-import ContactComponent from "./ContactComponent";
-import Favorites from "./FavoritesComponent";
-import Login from "./LoginComponent";
 import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
@@ -41,11 +31,7 @@ import {
 } from "../redux/ActionCreators";
 import Reservation from "./ReservationComponent";
 import NetInfo from "@react-native-community/netinfo";
-<<<<<<< HEAD
-=======
-import * as MediaLibrary from 'expo-media-library';
 
->>>>>>> temp-branch
 
 const mapDispatchToProps = {
   fetchCampsites,
@@ -351,18 +337,7 @@ class Main extends Component {
     this.props.fetchPromotions();
     this.props.fetchPartners();
 
-<<<<<<< HEAD
-    NetInfo.fetch().then((connectionInfo) => {
-      Platform.OS === "ios"
-        ? Alert.alert("Initial Network Connectivity Type:", connectionInfo.type)
-        : ToastAndroid.show(
-            "Initial Network Connectivity Type: " + connectionInfo.type,
-            ToastAndroid.LONG
-          );
-    });
-=======
     this.showNetInfo();
->>>>>>> temp-branch
 
     this.unsubscribeNetInfo = NetInfo.addEventListener((connectionInfo) => {
       this.handleConnectivityChange(connectionInfo);
@@ -371,8 +346,6 @@ class Main extends Component {
 
   componentWillUnmount() {
     this.unsubscribeNetInfo();
-<<<<<<< HEAD
-=======
   }
 
   handleConnectivityChange = (connectionInfo) => {
@@ -417,29 +390,7 @@ class Main extends Component {
         <AppNavigator />
       </View>
     );
->>>>>>> temp-branch
   }
-
-  handleConnectivityChange = (connectionInfo) => {
-    let connectionMsg = "You are now connected to an active network.";
-    switch (connectionInfo.type) {
-      case "none":
-        connectionMsg = "No network connection is active.";
-        break;
-      case "unknown":
-        connectionMsg = "The network connection state is now unknown.";
-        break;
-      case "cellular":
-        connectionMsg = "You are now connected to a cellular network.";
-        break;
-      case "wifi":
-        connectionMsg = "You are now connected to a WiFi network.";
-        break;
-    }
-    Platform.OS === "ios"
-      ? Alert.alert("Connection change:", connectionMsg)
-      : ToastAndroid.show(connectionMsg, ToastAndroid.LONG);
-  };
 }
 
 const styles = StyleSheet.create({
